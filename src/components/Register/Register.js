@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './Register.css';
 
 const Register = () => {
     const { register, handleSubmit, errors } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const history = useHistory();
     const onSubmit = data => {
         console.log(data);
         const volunteerDetails = {...loggedInUser, register: data};
@@ -23,6 +24,7 @@ const Register = () => {
             console.log(data);
             if(data){
                 alert('Volunteer Add successfully');
+                history.push("/volunteerDetails");
             }
         })
     }; 
@@ -47,9 +49,6 @@ const Register = () => {
                         <input name="phone" ref={register({ required: true })}  placeholder="Phone Number"/>
                         {errors.phone && <span className="error">Phone Number is required</span>}
                         <input className="btn-primary" type="submit" value="Register"/>
-                        <Link to="/volunteerDetails">
-                            <input className="btn-success" type="button" value="Volunteer Activity"/>
-                        </Link>
                     </form>
                 </div>
             </Row>

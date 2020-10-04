@@ -18,10 +18,8 @@ const Header = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="navbar-nav ml-auto">
-                        <Link class="nav-link mt-2">Home</Link>                      
-                        <Link class="nav-link mt-2">Destination</Link>
-                        <Link class="nav-link mt-2">Event</Link>
-                        <Link class="nav-link mt-2">Blog</Link>
+                        <Link to="/" class="nav-link mt-2">Home</Link>                      
+                        <Link to="/newEventList" class="nav-link mt-2">Event</Link>
                         <Nav.Link className="text-dark mt-2">{loggedInUser.name}</Nav.Link>
                         {
                             loggedInUser.email ? <Link to="/login" onClick={()=> setLoggedInUser({})}><Button className="mt-2" variant="primary">Log Out</Button></Link>
@@ -30,7 +28,7 @@ const Header = () => {
                                 <Button variant="primary">Login</Button>
                             </Link>
                         }                       
-                        <Link to="/volunteerRegisterList" class="nav-link">
+                        <Link to="/admin" class="nav-link">
                             <Button variant="dark">Admin</Button>
                         </Link>                       
                     </div>

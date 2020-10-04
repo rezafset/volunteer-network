@@ -4,90 +4,90 @@ import VolunteerActivity from '../VolunteerActivity/VolunteerActivity';
 const activity = [
     {
         image: 'animalShelter.png',
-        name: 'Animal Shelter'
+        description: 'Animal Shelter'
     },
     {
         image: 'babySit.png',
-        name: 'Baby Sit'
+        description: 'Baby Sit'
     },
     {
         image: 'birdHouse.png',
-        name: 'Bird House'
+        description: 'Bird House'
     },
     {
         image: 'childSupport.png',
-        name: 'Child Support'
+        description: 'Child Support'
     },
     {
         image: 'cleanWater.png',
-        name: 'Clean Water'
+        description: 'Clean Water'
     },
     {
         image: 'clearnPark.png',
-        name: 'Clearn Park'
+        description: 'Clearn Park'
     },
     {
         image: 'clothSwap.png',
-        name: 'Cloth Swap'
+        description: 'Cloth Swap'
     },
     {
         image: 'driveSafety.png',
-        name: 'Drive Safety'
+        description: 'Drive Safety'
     },
     {
         image: 'foodCharity.png',
-        name: 'Food Charity'
+        description: 'Food Charity'
     },
     {
         image: 'goodEducation.png',
-        name: 'Good Education'
+        description: 'Good Education'
     },
     {
         image: 'ITHelp.png',
-        name: 'IT Help'
+        description: 'IT Help'
     },
     {
         image: 'libraryBooks.png',
-        name: 'Library Books'
+        description: 'Library Books'
     },
     {
         image: 'musicLessons.png',
-        name: 'Music Lessons'
+        description: 'Music Lessons'
     },
     {
         image: 'newBooks.png',
-        name: 'New Books'
+        description: 'New Books'
     },
     {
         image: 'refuseShelter.png',
-        name: 'Refuse Shelter'
+        description: 'Refuse Shelter'
     },
     {
         image: 'riverClean.png',
-        name: 'River Clean'
+        description: 'River Clean'
     },
     {
         image: 'schoolSuffiles.png',
-        name: 'School Suffiles'
+        description: 'School Suffiles'
     },
     {
         image: 'studyGroup.png',
-        name: 'Study Group'
+        description: 'Study Group'
     },
     {
         image: 'stuffedAnimals.png',
-        name: 'Stuffed Animals'
+        description: 'Stuffed Animals'
     },
     {
         image: 'voteRegister.png',
-        name: 'Vote Register'
+        description: 'Vote Register'
     }
 
 ]
 
 const Volunteer = () => {
     return (
-        <Container className="py-4">
+        <Container classdescription="py-4">
             <Row>
                 {
                     activity.map(activity=> <VolunteerActivity activity={activity}></VolunteerActivity>)

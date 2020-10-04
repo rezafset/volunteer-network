@@ -13,6 +13,9 @@ import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import VolunteerDetails from './components/VolunteerDetails/VolunteerDetails';
 import VolunteerRegister from './components/VolunteerRegister/VolunteerRegister';
+import Admin from './components/Admin/Admin';
+import NewEvent from './components/NewEvent/NewEvent';
+import Footer from './components/Footer/Footer';
 
 export const UserContext = createContext();
 
@@ -27,20 +30,25 @@ function App() {
             <Register></Register>
           </PrivateRoute>
           <Route path="/login">
-           <Header></Header>
+            <Header></Header>
             <Login></Login>
           </Route>
           <Route path="/volunteerDetails">
             <Header></Header>
             <VolunteerDetails></VolunteerDetails>
           </Route>
-          <Route path="/volunteerRegisterList">
-            <VolunteerRegister></VolunteerRegister>
+          <Route path="/admin">
+            <Admin></Admin>
+          </Route>
+          <Route path="/newEventList">
+            <Header></Header>
+            <NewEvent></NewEvent>
           </Route>
           <Route path="/">
             <Header></Header>
             <Banner></Banner>
             <Volunteer></Volunteer>
+            <Footer></Footer>
           </Route>
         </Switch>
       </Router>
