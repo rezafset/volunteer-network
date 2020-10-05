@@ -12,10 +12,10 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import VolunteerDetails from './components/VolunteerDetails/VolunteerDetails';
-import VolunteerRegister from './components/VolunteerRegister/VolunteerRegister';
 import Admin from './components/Admin/Admin';
 import NewEvent from './components/NewEvent/NewEvent';
 import Footer from './components/Footer/Footer';
+import './App.css';
 
 export const UserContext = createContext();
 
