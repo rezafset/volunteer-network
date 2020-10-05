@@ -12,7 +12,6 @@ firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    // const [newUser, setNewUser] = useState(false);
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };

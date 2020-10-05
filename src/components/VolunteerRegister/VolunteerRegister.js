@@ -6,29 +6,33 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 const VolunteerRegister = () => {
     const [volunteerList, setVolunteerList] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/volunteerList')
+        fetch('https://secret-basin-86464.herokuapp.com/volunteerList')
         .then(response=> response.json())
         .then(data=>setVolunteerList(data));
     }, [])
 
-    const deleteVolunteer = (_id) =>{
-        fetch('http://localhost:5000/deleteVolunteer' , {
-            method: 'DELETE',
-            headers: { "Content-Type": "Application/JSON" },
-            body: JSON.stringify({ id: _id }),
+    const deleteVolunteer = (id) =>{
+        fetch('https://secret-basin-86464.herokuapp.com/deleteVolunteer',{
+            method:'DELETE',
+            headers:{
+                'Content-Type':'application/json',
+                id:id
+            }
         })
-        .then(response=> response.json())
+        .then(res=>res.json())
         .then(result=>{
             if(result){
+                const volunteer= volunteerList.filter (data=> data._id !== id)
+                setVolunteerList(volunteer);
                 alert('Volunteer Deleted Successfully');
             }
-        })     
+        })
     }
 
     return (
-        <Container>
+        <Container >
             <h4>Volunteer Register List</h4>
-            <Table bordered hover>
+            <Table bordered hover className="my-4">
                 <thead>
                     <tr>
                         <th>Name</th>

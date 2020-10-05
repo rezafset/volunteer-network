@@ -12,7 +12,7 @@ const Register = () => {
     const onSubmit = data => {
         console.log(data);
         const volunteerDetails = {...loggedInUser, register: data};
-        fetch('http://localhost:5000/addVolunteer',{
+        fetch('https://secret-basin-86464.herokuapp.com/addVolunteer',{
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'

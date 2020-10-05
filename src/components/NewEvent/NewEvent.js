@@ -6,7 +6,7 @@ const NewEvent = () => {
     const [newEvent, setNewEvent] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/newEventList')
+        fetch('https://secret-basin-86464.herokuapp.com/newEventList')
         .then(response=> response.json())
         .then(data=>setNewEvent(data));
     }, [])

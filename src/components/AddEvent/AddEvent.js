@@ -9,7 +9,7 @@ const AddEvent = () => {
     const onSubmit = data => {
         console.log(data);
         const eventDetails = { event: data};
-        fetch('http://localhost:5000/addEvent',{
+        fetch('https://secret-basin-86464.herokuapp.com/addEvent',{
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'
