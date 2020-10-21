@@ -87,10 +87,16 @@ const activity = [
 
 const Volunteer = () => {
     return (
-        <Container classdescription="py-4">
+        <Container className="py-4">
             <Row>
                 {
-                    activity.map(activity=> <VolunteerActivity activity={activity}></VolunteerActivity>)
+                    activity.map(activity=>{
+                        let color = ['#FFBD3E','#FF7044','#3F90FC', '#421FCF'];
+                        const random = Math.floor(Math.random()*4)
+                        return (
+                            <VolunteerActivity activity={activity} color={color[random]}></VolunteerActivity>
+                        )
+                    })
                 }
             </Row>
         </Container>

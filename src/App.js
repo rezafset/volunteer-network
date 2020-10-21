@@ -25,7 +25,7 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <PrivateRoute path="/register">
+          <PrivateRoute path="/register/:description">
             <Header></Header>
             <Register></Register>
           </PrivateRoute>

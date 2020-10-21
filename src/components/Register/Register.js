@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './Register.css';
 
 const Register = () => {
+    const {description} = useParams();
     const { register, handleSubmit, errors } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -43,10 +44,10 @@ const Register = () => {
                         <input type="date" name="dob" ref={register({ required: true })} placeholder="date"/>
                         {errors.dob && <span className="error">Date is required</span>}
                         
-                        <input name="description" ref={register({ required: true })}  placeholder="Description" />
-                        {errors.description && <span className="error">Destination is required</span>}
+                        <input type="text" name="description" defaultValue={description} ref={register({ required: true })}  placeholder="Description" />
+                        {errors.description && <span className="error">Description is required</span>}
                         
-                        <input name="phone" ref={register({ required: true })}  placeholder="Phone Number"/>
+                        <input type="text" name="phone" ref={register({ required: true })}  placeholder="Phone Number"/>
                         {errors.phone && <span className="error">Phone Number is required</span>}
                         <input className="btn-primary" type="submit" value="Register"/>
                     </form>
